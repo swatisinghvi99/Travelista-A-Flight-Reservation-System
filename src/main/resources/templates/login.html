@@ -1,0 +1,92 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Travelista | Login</title>
+    <link href="\assets_admin\img\logo.png" rel="icon">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+          rel="stylesheet">
+
+
+    <link href="\assets\vendor\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="\css\style.css">
+</head>
+
+<body>
+
+<div class="header2">
+    <a href="/" class="logo"><img src="\images\logo.png" alt="Logo" width="120"></a>
+    <div style="text-align:center">
+        <h1 style="display:block;width:40%;margin: 20px auto 20px auto;color: #1e4356;letter-spacing: 25px;font-weight: bold;font-family: 'Bebas Neue', cursive;font-size: 50px;">TRAVELISTA</h1>
+
+    </div>
+</div>
+
+<div class="navbar2">
+    <div class="navbar2-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><b>Log In</b></h5>
+                    <form id="form" name="form" class="form-signin" method="post"  onsubmit="return validate()">
+                        <div class="form-label-group">
+                            <input type="email" id="emailID" class="form-control" name="emailID"
+                                   placeholder="Enter Email ID" autofocus>
+                            <label for="emailID">Email ID</label>
+                        </div>
+
+                        <div class="form-label-group">
+                            <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password" required>
+                            <label for="password">Password</label>
+                        </div>
+
+                        <input class="btn btn-lg btn-block text-uppercase"
+                               style="background-color: #1E4356; color: white;" type="submit" value="Sign In"/>
+                        <input class="btn btn-lg btn-block text-uppercase"
+                               style="background-color: #1E4356; color: white;" type="reset" value="Reset"/>
+                    </form>
+                    <div style="color:red;" th:text="*{reply}"></div>
+                    <hr>
+                    <!-- <div class="text-center"><a class="small" href="forgot-password1.jsp">Forgot Password?</a>
+                    </div> -->
+                    <div class="text-center">Don't have an account? <a style="text-decoration:none !important" href="/signup">SIGN UP</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function validate() {
+        var mailRegEx = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        if (!document.forms["form"]["emailID"].value.match(mailRegEx)) {
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+    }
+
+</script>
+
+<footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Travelista</span></strong>. All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
+
